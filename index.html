@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="2DMaker">
+<head>
+	<meta charset="UTF-8">
+	<title>2D Arrays Maker</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="mdn.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+
+	<div ng-controller="plotCtrl" ng-init="array = []">
+		<input type="number" ng-model="addValue">
+		<button ng-click="addValue = -addValue">x(-1)</button>
+		<button ng-click="addTop()">上</button> 
+		<button ng-click="addBottom()">下</button> 
+		<button ng-click="addLeft();">左</button> 
+		<button ng-click="addRight();">右</button>
+		<button ng-click="clear()">Clear</button><br>
+
+		2D Arrays: <br>
+		<textarea onclick='this.select()'>{{arrayString()}}</textarea>
+		<select ng-model="bracket">
+			<option value="{">{ }</option>
+			<option value="[">[ ]</option>
+			<option value="c(">c( )</option>
+			<option value="Array(">Array( )</option>
+		</select>
+		<br>
+		{{overH}}, {{overW}}
+		<table>
+			<tr>
+				<td>
+				<td ng-repeat='c in table[0]' class='number' ng-class='{highlight: $index == overW}'>{{$index}}</td>
+			</tr>
+			<tr ng-repeat='row in table'>
+				<td class='number' ng-class='{highlight: $index == overH}'>{{$index}}</td>
+				<td ng-attr-title="{{$parent.$index}}, {{$index}}" ng-repeat="cell in row" ng-click="plot($parent.$index, $index)" ng-class="{highlight: cell.highlight, ploted: cell.content == 1, notploted: cell.content == 0, over: $parent.$index == overH && $index == overW}" ng-mouseover="highlight($parent.$index, $index)">
+				</td>
+			</tr>
+		</table>
+		
+		
+	</div>
+
+
+</body>
+</html>
