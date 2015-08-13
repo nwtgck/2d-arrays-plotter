@@ -6,6 +6,8 @@ angular.module('2DMaker', []).
 		$scope.addValue = 1;
 		$scope.overW = 0;
 		$scope.overH = 0;
+		$scope.inputW = init_w;
+		$scope.inputH = init_h;
 		var brackets = {
 			'[' : ']',
 			'{' : '}',
@@ -111,6 +113,15 @@ angular.module('2DMaker', []).
 					return v.content;
 				}).join(', ') + brackets[$scope.bracket];
 			}).join(",\n") + "\n" + brackets[$scope.bracket];
+		};
+
+		$scope.resetSize = function(){
+			var bkAddValue = $scope.addValue;
+			$scope.addValue = $scope.inputW - $scope.table[0].length;
+			$scope.addRight();
+			$scope.addValue = $scope.inputH - $scope.table.length;
+			$scope.addBottom();
+			$scope.addValue = bkAddValue;
 		};
 
 

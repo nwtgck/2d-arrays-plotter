@@ -16,7 +16,10 @@
 		<button ng-click="addTop()">上</button> 
 		<button ng-click="addBottom()">下</button> 
 		<button ng-click="addLeft();">左</button> 
-		<button ng-click="addRight();">右</button>
+		<button ng-click="addRight();">右</button><br>
+		縦:<input type='number' ng-model='inputH' min='1'> x 
+		横:<input type='number' ng-model='inputW' min='1'>
+		<button ng-click='resetSize()'>サイズを設定</button><br>
 		<button ng-click="clear()">Clear</button><br>
 
 		2D Arrays: <br>
