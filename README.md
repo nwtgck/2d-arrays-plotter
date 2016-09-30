@@ -1,7 +1,7 @@
-# 2D-Arrays-Plotter
+# What is 2D Array Plotter? #
 
-マス目をプロットして、二次元配列を作ります
+Make a 2D Array by plot.
 
-ページ
-http://nwtgck.dip.jp/2d_plotter/
+Page: http://nwtgck.github.io/2D-Arrays-Plotter/
+
 
