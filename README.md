@@ -8,4 +8,4 @@ http://nwtgck.github.io/2D-Arrays-Plotter/
 
 # Demo #
 
-![](https://raw.githubusercontent.com/nwtgck/2D-Arrays-Plotter/master/image/demo1.gif)
+<image src="https://raw.githubusercontent.com/nwtgck/2D-Arrays-Plotter/master/image/demo1.gif" width=450>
