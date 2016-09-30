@@ -13,16 +13,16 @@
 	<div ng-controller="plotCtrl" ng-init="array = []">
 		<input type="number" ng-model="addValue">
 		<button ng-click="addValue = -addValue">x(-1)</button>
-		<button ng-click="addTop()">上</button> 
-		<button ng-click="addBottom()">下</button> 
-		<button ng-click="addLeft();">左</button> 
-		<button ng-click="addRight();">右</button><br>
-		縦:<input type='number' ng-model='inputH' min='1'> x 
-		横:<input type='number' ng-model='inputW' min='1'>
-		<button ng-click='resetSize()'>サイズを設定</button><br>
-		<button ng-click="clear()">Clear</button><br>
+		<button ng-click="addTop()">top</button>
+		<button ng-click="addBottom()">bottom</button>
+		<button ng-click="addLeft();">left</button>
+		<button ng-click="addRight();">right</button><br>
+		width:<input type='number' ng-model='inputW' min='1'>
+		height:<input type='number' ng-model='inputH' min='1'>
+		<button ng-click='resetSize()'>change the size</button><br>
+		<button ng-click="clear()">clear</button><br>
 
-		2D Arrays: <br>
+		2D Array: <br>
 		<textarea onclick='this.select()'>{{arrayString()}}</textarea>
 		<select ng-model="bracket">
 			<option value="{">{ }</option>
@@ -43,8 +43,8 @@
 				</td>
 			</tr>
 		</table>
-		
-		
+
+
 	</div>
 
 
