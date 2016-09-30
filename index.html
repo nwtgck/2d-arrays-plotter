@@ -24,11 +24,20 @@
 
 		2D Array: <br>
 		<textarea onclick='this.select()'>{{arrayString()}}</textarea>
+		Arrat Shape:
 		<select ng-model="bracket">
 			<option value="{">{ }</option>
 			<option value="[">[ ]</option>
+			<option value="(">( )</option>
 			<option value="c(">c( )</option>
 			<option value="Array(">Array( )</option>
+			<option value="List(">List( )</option>
+			<option value="Seq(">Seq( )</option>
+		</select>
+		Separator:
+		<select ng-model="separator">
+			<option value=",">comma(,)</option>
+			<option value=" ">space( )</option>
 		</select>
 		<br>
 		{{overH}}, {{overW}}

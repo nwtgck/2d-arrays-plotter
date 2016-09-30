@@ -3,6 +3,7 @@ angular.module('2DMaker', []).
 		var init_w = 30, init_h = 30;
 		$scope.table = [];
 		$scope.bracket = "[";
+		$scope.separator = ',';
 		$scope.addValue = 1;
 		$scope.overW = 0;
 		$scope.overH = 0;
@@ -12,7 +13,10 @@ angular.module('2DMaker', []).
 			'[' : ']',
 			'{' : '}',
 			'c(': ')',
-			'Array(': ')'
+			'Array(': ')',
+			'List(' : ')',
+			'Seq(' : ')',
+			'(' : ')'
 		};
 		$scope.plot = function(i, j){
 			console.log(i, j);
@@ -25,7 +29,7 @@ angular.module('2DMaker', []).
 				array.push({content: 0});
 			}
 			return array;
-		}	
+		}
 
 		$scope.addTop = function(){
 			if($scope.addValue > 0){
@@ -41,7 +45,7 @@ angular.module('2DMaker', []).
 
 		$scope.highlight = function(h, w){
 			$scope.overH = h;
-			$scope.overW = w; 
+			$scope.overW = w;
 			// for(var i = 0; i < $scope.table.length; i++){
 			// 	for(var j = 0; j < $scope.table[0].length; j++){
 			// 		$scope.table[i][j].highlight = false;
@@ -111,8 +115,8 @@ angular.module('2DMaker', []).
 			return $scope.bracket + "\n" +$scope.table.map(function(row){
 				return "\t" + $scope.bracket + row.map(function(v){
 					return v.content;
-				}).join(', ') + brackets[$scope.bracket];
-			}).join(",\n") + "\n" + brackets[$scope.bracket];
+				}).join($scope.separator) + brackets[$scope.bracket];
+			}).join($scope.separator+"\n") + "\n" + brackets[$scope.bracket];
 		};
 
 		$scope.resetSize = function(){
