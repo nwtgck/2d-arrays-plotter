@@ -9,6 +9,8 @@ angular.module('2DMaker', []).
 		$scope.overH = 0;
 		$scope.inputW = init_w;
 		$scope.inputH = init_h;
+		$scope.filledExpr = '1';
+		$scope.emptyExpr  = '0';
 		var brackets = {
 			'[' : ']',
 			'{' : '}',
@@ -114,7 +116,7 @@ angular.module('2DMaker', []).
 		$scope.arrayString = function(){
 			return $scope.bracket + "\n" +$scope.table.map(function(row){
 				return "\t" + $scope.bracket + row.map(function(v){
-					return v.content;
+					return v.content == 1 ? $scope.filledExpr : $scope.emptyExpr;
 				}).join($scope.separator) + brackets[$scope.bracket];
 			}).join($scope.separator+"\n") + "\n" + brackets[$scope.bracket];
 		};
