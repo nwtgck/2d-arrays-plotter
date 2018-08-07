@@ -1,11 +1,11 @@
-# What is 2D Array Plotter? #
+# 2d-arrays-plotter
 
 Make a 2D Array by plot.
 
-# Page #
+## Page
 
-http://nwtgck.github.io/2D-Arrays-Plotter/
+<https://nwtgck.github.io/2d-arrays-plotter/>
 
-# Demo #
+## Demo
 
-<img src="image/demo1.gif" width=450>
+![demo1](image/demo1.gif)
